@@ -1,0 +1,200 @@
+body {
+  background: #1e1e1e;
+  color: white;
+  font-family: Arial, sans-serif;
+  text-align: center;
+  padding-bottom: 50px;
+}
+
+input, button {
+  padding: 10px;
+  margin: 10px;
+  border-radius: 5px;
+  border: none;
+}
+
+button {
+  background: orange;
+  color: white;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+button:hover {
+  background: darkorange;
+}
+
+.grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.card {
+  width: 200px;
+  margin: 10px;
+  cursor: pointer;
+  background: #333;
+  border-radius: 10px;
+  padding-bottom: 10px;
+  transition: transform 0.2s;
+}
+
+.card:hover {
+  transform: scale(1.05);
+}
+
+.card img {
+  width: 100%;
+  border-radius: 10px 10px 0 0;
+}
+
+.card h4 {
+  color: orange;
+  margin: 10px;
+}
+
+/* Interactive Elements Polish */
+.ingredient-card {
+  cursor: pointer;
+  margin: 10px;
+  transition: transform 0.2s;
+}
+
+.ingredient-card:hover {
+  transform: scale(1.1);
+  color: orange;
+}
+
+.flag-icon {
+  cursor: pointer;
+  margin: 10px;
+  transition: transform 0.2s;
+}
+
+.flag-icon:hover {
+  transform: scale(1.2);
+}
+
+.letter {
+  cursor: pointer;
+  margin: 5px;
+  font-size: 20px;
+  font-weight: bold;
+  padding: 5px 10px;
+  transition: color 0.2s;
+}
+
+.letter:hover {
+  color: orange;
+}
+
+/* Modal Styling */
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.8);
+  overflow-y: auto; 
+}
+
+.hidden {
+  display: none;
+}
+
+.modal-content {
+  background: #222;
+  padding: 20px;
+  margin: 50px auto;
+  width: 60%;
+  max-width: 600px;
+  border-radius: 10px;
+}
+
+.close {
+  float: right;
+  cursor: pointer;
+  color: red;
+  font-size: 24px;
+  font-weight: bold;
+}
+
+/* =========================================
+   ⏳ LOADING SPINNER 
+   ========================================= */
+#loader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(30, 30, 30, 0.9); /* Dark semi-transparent background */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000; /* Keeps it on top of everything else */
+}
+
+#loader.hidden {
+  display: none !important;
+}
+
+.spinner {
+  border: 8px solid #333; /* Dark grey border */
+  border-top: 8px solid orange; /* Orange top border for the spin effect */
+  border-radius: 50%;
+  width: 60px;
+  height: 60px;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* =========================================
+   📱 RESPONSIVE MEDIA QUERIES 
+   ========================================= */
+
+/* Tablets and smaller screens */
+@media (max-width: 900px) {
+  .modal-content {
+    width: 80%; /* Gives the modal more breathing room on tablets */
+  }
+}
+
+/* Mobile phones */
+@media (max-width: 600px) {
+  /* Make the search bar longer on mobile */
+  #searchInput {
+    width: 60%;
+  }
+
+  /* Make cards slightly smaller so two can fit side-by-side on small screens */
+  .card {
+    width: 150px; 
+    margin: 5px;
+  }
+
+  /* Shrink the ingredient images slightly */
+  .ingredient-card img {
+    width: 80px;
+  }
+
+  /* Expand the modal to take up most of the screen on phones */
+  .modal-content {
+    width: 90%;
+    margin: 20px auto;
+    padding: 15px;
+  }
+
+  /* Shrink the alphabet letters so they don't take up too much vertical space */
+  .letter {
+    font-size: 16px;
+    padding: 4px 6px;
+  }
+}

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MealDB App</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<h1>🍽️ MealDB App</h1>
+
+<input type="text" id="searchInput" placeholder="Search for a meal...">
+<button onclick="searchMeals()">Search</button>
+
+<div id="results" class="grid"></div>
+
+<h2>Random Meals</h2>
+<div id="random" class="grid"></div>
+
+<h2>Popular Ingredients</h2>
+<div id="popularIngredients" class="grid small"></div>
+
+<h2>Random Ingredients</h2>
+<div id="randomIngredients" class="grid small"></div>
+
+<h2>Browse by Country</h2>
+<div id="flags" class="grid small"></div>
+
+<h2>Browse By Name</h2>
+<div id="letters"></div>
+
+<div id="mealDetail" class="modal hidden">
+  <div class="modal-content">
+    <span onclick="closeModal()" class="close">X</span>
+    <div id="mealInfo"></div>
+  </div>
+</div>
+<div id="loader" class="hidden">
+  <div class="spinner"></div>
+  <p>Fetching delicious meals...</p>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
+
+<script src="script.js"></script>
+</body>
+</html>
